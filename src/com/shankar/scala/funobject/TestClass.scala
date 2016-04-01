@@ -5,9 +5,9 @@ object TestClass {
   
   def main(args: Array[String]): Unit = {
     
-    val rat1 = new Rational1(2,3)
+    val rat1 = new Rational1(10,5)
     
-    val rat2 = new Rational1(2)
+    val rat2 = new Rational1(5,3)
     
     println(rat1)
     
