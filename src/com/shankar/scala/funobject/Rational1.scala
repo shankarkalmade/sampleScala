@@ -18,6 +18,13 @@ class Rational1(n:Int, d:Int) {
       gcd(d, n%d)
   
   }
+  
+  private def lessThan(that: Rational1)={
+    
+    numer * that.denom > denom * that.numer
+  }
+  
+  
   def mult(that:Rational1):Rational1 = {
     
     new Rational1(that.numer * numer , that.denom * denom)
@@ -46,6 +53,15 @@ class Rational1(n:Int, d:Int) {
     
     numer +" / "+denom
     
+  }
+  
+  def max (that: Rational1) ={
+    
+    if(this.lessThan(that))
+      this
+    else 
+      that
+      
   }
   
 override def toString() = numer +" / "+denom
