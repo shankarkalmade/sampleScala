@@ -41,6 +41,6 @@ class Rational1(n:Int, d:Int) {
     
   }
   
-  
+override def toString() = numer +" / "+denom
   
 }
