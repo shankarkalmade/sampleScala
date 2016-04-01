@@ -7,7 +7,7 @@ object TestClass {
     
     val rat1 = new Rational1(2,3)
     
-    val rat2 = new Rational1(2,3)
+    val rat2 = new Rational1(2)
     
     println(rat1.getRationalInfo())
     

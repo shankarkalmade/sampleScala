@@ -5,6 +5,12 @@ class Rational1(n:Int, d:Int) {
   val numer:Int = n
   val denom:Int = d
   
+  def this(n :Int) ={
+    
+    this(n,1)
+  }
+  
+  
   def mult(that:Rational1):Rational1 = {
     
     new Rational1(that.numer * numer , that.denom * denom)
