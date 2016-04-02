@@ -37,10 +37,10 @@ object SearchStringUsingFor {
   }
   
   def findPatterns(files: Array[java.io.File], pattern:String) = {
-    
+   
     for{
       file <- files
-      
+     
       if(file.isFile())
       if(file.getName().endsWith(".txt"))  
       line <- getLines(file)
