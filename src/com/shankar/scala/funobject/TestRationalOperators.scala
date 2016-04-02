@@ -12,7 +12,7 @@ object TestRationalOperators {
     
     println(rat2)
   
-    val added = rat1 + rat2
+    val added = rat1 + 3
     
     println("Addition = "+ added)
 
@@ -36,6 +36,9 @@ object TestRationalOperators {
     println("done")
     
     println("changed from home")
+    
+    
+    
     
   }
   

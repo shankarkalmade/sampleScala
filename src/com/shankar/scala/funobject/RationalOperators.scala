@@ -32,24 +32,46 @@ class RationalOperators(n:Int, d:Int) {
     
   }
   
+  def * (i :Int) : RationalOperators = {
+    
+    new RationalOperators(numer *  i , denom)
+    
+  }
+  
   def / (that :RationalOperators) : RationalOperators ={
     
     new RationalOperators(numer * that.denom, denom * that.numer)
     
   }
   
+  def / (i :Int) : RationalOperators = {
+    
+    new RationalOperators(numer, denom * i)
+    
+  }
   def + (that:RationalOperators) : RationalOperators ={
     
     new RationalOperators((numer * that.denom + denom * that.numer), denom * that.denom)
     
   }
   
+  def + (i :Int) : RationalOperators = {
+    
+    new RationalOperators((numer + i )* denom, denom)
+    
+  }
+    
   def - (that:RationalOperators) : RationalOperators ={
     
     new RationalOperators((numer * that.denom - denom * that.numer), denom * that.denom)
     
   }
   
+  def - (i :Int) : RationalOperators = {
+    
+    new RationalOperators((numer - i )* denom, denom)
+    
+  }
   def getRationalInfo (): String ={
     
     numer +" / "+denom
