@@ -10,16 +10,30 @@ object SearchStringUsingFor {
     
     //list all files using 
     
-     var allFiles = (new java.io.File("E:\\scala_workspace\\Sample_project\\src\\com\\shankar\\scala\\controlStructure")).listFiles
+     //var allFiles = (new java.io.File("E:\\scala_workspace\\Sample_project\\src\\com\\shankar\\scala\\controlStructure")).listFiles
+    
+     var allFiles = (new java.io.File("/home/shankar/Documents/shankar_git_repos/scala/sampleScala/src/com/shankar/scala/controlStructure")).listFiles
      
      //print all lines from directory .java files
     
-    // printAllJavaFiles(allFiles)
+     printAllJavaFiles(allFiles)
      
-     val compareString = "println" 
+     //val compareString = "println" 
      
-     findPatterns(allFiles,compareString)
+     //findPatterns(allFiles,compareString)
     
+     
+     /**
+      * write all files
+      */
+     //getAllFiles(allFiles).foreach { println }
+     
+     /**
+      * write all directories
+      */
+     //getAllDirs(allFiles).foreach{ println}
+     
+     
   }
   
   def getLines(file:java.io.File) = scala.io.Source.fromFile(file).getLines()
@@ -42,7 +56,7 @@ object SearchStringUsingFor {
       file <- files
      
       if(file.isFile())
-      if(file.getName().endsWith(".txt"))  
+      if(file.getName().endsWith(".scala"))  
       line <- getLines(file)
       
       if(line.contains(pattern))
@@ -52,5 +66,28 @@ object SearchStringUsingFor {
         
   }
   
+  //function to yield all files from path
+    def getAllFiles(files: Array[java.io.File]):Array[java.io.File] = {
+    
+    for{
+      file <- files
+      if(file.isFile())
+      
+    }yield file
+    
+    
+  }
+  
+  //function to yield all directories from path
+    def getAllDirs(files: Array[java.io.File]):Array[java.io.File] = {
+    
+    for{
+      file <- files
+      if(file.isDirectory())
+      
+    }yield file
+    
+    
+  }
   
 }
