@@ -17,8 +17,8 @@ object MultDataMatch {
       
       val str = data match {
         case 1 => "int one"
-        case i: Int => "other int value "+data
-        case d: Double => "double value " + data
+        case _ : Int | _ : Double => "other number "+data
+        //case d: Double => "double value " + data
         case "one" => "one value "
         case s: String => "string value " + data
         case unexpected => "unexpected data "+ unexpected
